@@ -1,0 +1,152 @@
+[
+  {
+    "title": "Global patterns of urban heat shaped by climate and morphology",
+    "authors": "Lee, Siwoo, Cheolhee Yoo, Bokyung Son, Dongjin Cho, Jungho Im, and T. C. Chakraborty",
+    "year": 2026,
+    "image": "assets/img/papers/s41467-026-73062-8.webp",
+    "pdf": "https://www.nature.com/articles/s41467-026-73062-8.pdf",
+    "license": "CC BY-NC-ND 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+  },
+  {
+    "title": "Spatiotemporal changes in inter-city sustainability impacts linked to emission challenges worldwide",
+    "authors": "Xiao, Huijuan, Cheolhee Yoo, Qihao Weng, Sheng Bao, Song Xue, Cameron Allen, Jingzheng Ren, Jian Zhou, Zhenci Xu, Mengqian Lu, and Jianguo Liu",
+    "year": 2026,
+    "image": "assets/img/papers/s41467-026-73515-0.webp",
+    "pdf": "https://www.nature.com/articles/s41467-026-73515-0.pdf",
+    "license": "CC BY-NC-ND 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+  },
+  {
+    "title": "Mapping 10-m Industrial Lands across 1000+ Global Large Cities, 2017–2023",
+    "authors": "Yoo, Cheolhee, Yuhan Zhou, and Qihao Weng",
+    "year": 2025,
+    "image": "assets/img/papers/s41597-025-04604-w.webp",
+    "pdf": "https://www.nature.com/articles/s41597-025-04604-w.pdf",
+    "license": "CC BY-NC-ND 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+  },
+  {
+    "title": "Unequal impacts of urban industrial land expansion on economic growth and carbon dioxide emissions",
+    "authors": "Yoo, Cheolhee, Huijuan Xiao, Qing-wei Zhong, and Qihao Weng",
+    "year": 2024,
+    "image": "assets/img/papers/s43247-024-01375-x.webp",
+    "pdf": "https://www.nature.com/articles/s43247-024-01375-x.pdf",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "title": "Diurnal urban heat risk assessment using extreme air temperatures and real-time population data in Seoul",
+    "authors": "Yoo, Cheolhee, Jungho Im, Qihao Weng, Dongjin Cho, Eunjin Kang, and Yeji Shin",
+    "year": 2023,
+    "image": "assets/img/papers/isci-2023-108123.webp",
+    "pdf": "https://ira.lib.polyu.edu.hk/bitstream/10397/103536/1/1-s2.0-S2589004223022009-main.pdf",
+    "license": "CC BY-NC-ND 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+  },
+  {
+    "title": "Identifying the Impact of Regional Meteorological Parameters on US Crop Yield at Various Spatial Scales Using Remote Sensing Data",
+    "authors": "Yoo, Cheolhee, Daehyun Kang, and Seonyoung Park",
+    "year": 2022,
+    "image": "assets/img/papers/rs14153508.webp",
+    "pdf": "https://www.mdpi.com/2072-4292/14/15/3508/pdf",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "title": "All-sky 1 km MODIS land surface temperature reconstruction considering cloud effects based on machine learning",
+    "authors": "Cho, Dongjin, Dukwon Bae, Cheolhee Yoo, Jungho Im, Yeonsu Lee, and Siwoo Lee",
+    "year": 2022,
+    "image": "assets/img/papers/rs14081815.webp",
+    "pdf": "https://www.mdpi.com/2072-4292/14/8/1815/pdf",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "title": "Analysis of surface urban heat island and land surface temperature using deep learning based local climate zone classification: A case study of suwon and daegu, korea",
+    "authors": "Lee, Yeonsu, Siwoo Lee, Jungho Im, and Cheolhee Yoo",
+    "year": 2021,
+    "image": "assets/img/papers/kjrs-2021-37-5-3-9.webp",
+    "pdf": "https://koreascience.kr/article/JAKO202131452689678.pdf",
+    "license": "CC BY-NC 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc/3.0/"
+  },
+  {
+    "title": "Improving local climate zone classification using incomplete building data and Sentinel 2 images based on convolutional neural networks",
+    "authors": "Yoo, Cheolhee, Yeonsu Lee, Dongjin Cho, Jungho Im, and Daehyeon Han",
+    "year": 2020,
+    "image": "assets/img/papers/rs12213552.webp",
+    "pdf": "https://www.mdpi.com/2072-4292/12/21/3552/pdf",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "title": "Estimation of all-weather 1 km MODIS land surface temperature for humid summer days",
+    "authors": "Yoo, Cheolhee, Jungho Im, Dongjin Cho, Naoto Yokoya, Junshi Xia, and Benjamin Bechtel",
+    "year": 2020,
+    "image": "assets/img/papers/rs12091398.webp",
+    "pdf": "https://www.mdpi.com/2072-4292/12/9/1398/pdf",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "title": "Analysis of thermal environment by urban expansion using KOMPSAT and Landsat 8: Sejong City",
+    "authors": "Yoo, Cheolhee, Seonyoung Park, Yeji Kim, and Dongjin Cho",
+    "year": 2019,
+    "image": "assets/img/papers/kjrs-2019-35-6-4-9.webp",
+    "pdf": "https://koreascience.kr/article/JAKO201905260947462.pdf",
+    "license": "CC BY-NC 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc/3.0/"
+  },
+  {
+    "title": "Classification and mapping of paddy rice by combining Landsat and SAR time series data",
+    "authors": "Park, Seonyoung, Jungho Im, Seohui Park, Cheolhee Yoo, Hyangsun Han, and Jinyoung Rhee",
+    "year": 2018,
+    "image": "assets/img/papers/rs10030447.webp",
+    "pdf": "https://www.mdpi.com/2072-4292/10/3/447/pdf",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "title": "Thermal characteristics of Daegu using land cover data and satellite-derived surface temperature downscaled based on machine learning",
+    "authors": "Yoo, Cheolhee, Jungho Im, Seonyoung Park, and Dongjin Cho",
+    "year": 2017,
+    "image": "assets/img/papers/kjrs-2017-33-6-2-6.webp",
+    "pdf": "https://koreascience.or.kr/article/JAKO201707356123214.pdf",
+    "license": "CC BY-NC 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc/3.0/"
+  },
+  {
+    "title": "Downscaling MODIS nighttime land surface temperatures in urban areas using ASTER thermal data through local linear forest",
+    "authors": "Yoo, Cheolhee, Jungho Im, Dongjin Cho, Yeonsu Lee, Dukwon Bae, and Panagiotis Sismanidis",
+    "year": 2022,
+    "image": "assets/img/papers/jag-2022-102827.webp",
+    "doi": "10.1016/j.jag.2022.102827",
+    "source": "User-provided PDF, first page rendered without alteration",
+    "sourcePdf": "1-s2.0-S1569843222000292-main.pdf",
+    "license": "CC BY-NC-ND 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+  },
+  {
+    "title": "Comparison between convolutional neural networks and random forest for local climate zone classification in mega urban areas using Landsat images",
+    "authors": "Yoo, Cheolhee, Daehyeon Han, Jungho Im, and Benjamin Bechtel",
+    "year": 2019,
+    "image": "assets/img/papers/isprsjprs-2019-09-009.webp",
+    "doi": "10.1016/j.isprsjprs.2019.09.009",
+    "source": "User-provided PDF, first page rendered without alteration",
+    "sourcePdf": "1-s2.0-S0924271619302205-main.pdf",
+    "license": "© 2019 Elsevier B.V. on behalf of ISPRS.",
+    "licenseUrl": ""
+  },
+  {
+    "title": "Estimation of daily maximum and minimum air temperatures in urban landscapes using MODIS time series satellite data",
+    "authors": "Yoo, Cheolhee, Jungho Im, Seonyoung Park, and Lindi J. Quackenbush",
+    "year": 2018,
+    "image": "assets/img/papers/isprsjprs-2018-01-018.webp",
+    "doi": "10.1016/j.isprsjprs.2018.01.018",
+    "source": "User-provided PDF, first page rendered without alteration",
+    "sourcePdf": "Yoo_etal_2018_PHOTO (1).pdf",
+    "license": "© 2018 ISPRS. Published by Elsevier B.V. All rights reserved.",
+    "licenseUrl": ""
+  }
+]

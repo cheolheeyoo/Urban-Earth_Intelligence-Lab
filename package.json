@@ -1,0 +1,5 @@
+{
+  "name": "uei-lab-website",
+  "private": true,
+  "scripts": { "dev": "node tools/preview.mjs" }
+}

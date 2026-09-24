@@ -1,0 +1,59 @@
+{
+  "format": "Family, Given, Given Family, and Given Family. Preserve the author order and published spelling; retain published initials where applicable.",
+  "verified": "2026-09-24",
+  "records": [
+    {
+      "id": "paper-01",
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/42115603/"
+      ],
+      "note": "T. C. Chakraborty is retained as published."
+    },
+    {
+      "id": "paper-02",
+      "urls": [
+        "https://www.nature.com/articles/s41467-026-73515-0"
+      ],
+      "note": "Full names already present in the existing site; reordered for consistent citation formatting."
+    },
+    {
+      "id": "paper-03",
+      "urls": [
+        "https://treephys.snu.ac.kr/publications-new/publications-journals/",
+        "https://irisunist.wixsite.com/irislab/publication",
+        "https://github.com/sbkyung/UNIQUE"
+      ],
+      "note": "Author lists from the authors’ labs and code repository, including final author Hyun Seok Kim. Published initials in S. M. Sohel Rana retained."
+    },
+    {
+      "id": "paper-04",
+      "urls": [
+        "https://www.sciencedirect.com/science/article/pii/S2666017226001069",
+        "https://www.sciencedirect.com/journal/science-of-remote-sensing/vol/14/suppl/C"
+      ],
+      "note": "Publisher listing uses Frank Göttsche."
+    },
+    {
+      "id": "paper-05",
+      "urls": [
+        "https://www.keaipublishing.com/en/journals/artificial-intelligence-in-geosciences/recent-articles/",
+        "https://www.sciencedirect.com/science/article/pii/S2666544126000298"
+      ]
+    },
+    {
+      "id": "paper-06",
+      "urls": [
+        "https://yonsei.elsevierpure.com/en/publications/quantifying-multi-pollutant-co-exposure-via-deep-learning-based-s/",
+        "https://doi.org/10.1021/acs.est.5c15772"
+      ],
+      "note": "All ten authors restored from the institutional publication record; published middle initials retained."
+    },
+    {
+      "id": "paper-07",
+      "urls": [
+        "https://eprints.gla.ac.uk/381495/"
+      ]
+    }
+  ],
+  "other_records": "Existing full-name citation strings retained. Initials in Jacqueline T. Y. Lo were punctuated consistently without expanding them."
+}
