@@ -116,11 +116,11 @@
             <ul class="nav-list">
               ${NAV.map((k) => `<li><a href="${href(k + ".html")}"${page === k ? ' aria-current="page"' : ""}>${ui("nav_" + k)}</a></li>`).join("")}
             </ul>
-            <div class="lang-switch" role="group" aria-label="${esc(ui("language"))}">
-              <button type="button" data-lang="ko" lang="ko" aria-pressed="${lang === "ko"}">한국어</button>
-              <button type="button" data-lang="en" lang="en" aria-pressed="${lang === "en"}">English</button>
-            </div>
           </nav>
+          <div class="lang-switch" role="group" aria-label="${esc(ui("language"))}">
+            <button type="button" data-lang="ko" lang="ko" aria-pressed="${lang === "ko"}">한국어</button>
+            <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="${lang === "en"}"><span class="lang-full">English</span><span class="lang-short" aria-hidden="true">ENG</span></button>
+          </div>
         </div>
       </header>`;
   }
@@ -246,6 +246,7 @@
           ${heroes.map((src, i) => `<img src="${esc(src)}" alt="" class="${i === 0 ? "is-active" : ""}"${i ? ' loading="lazy"' : ""}>`).join("")}
         </div>
         <div class="wrap hero-text">
+          ${S.universityLogo ? `<img class="hero-university-logo" src="${esc(S.universityLogo.image)}" alt="${esc(tx(S.universityLogo.alt))}" width="1350" height="340">` : ""}
           ${lang === "ko" ? `<p class="hero-eyebrow" lang="en">${esc(S.brandName)}</p>` : ""}
           <h1 class="hero-title">${esc(tx(S.name))}</h1>
           <p class="hero-tagline">${esc(tx(S.tagline))}</p>

@@ -6,6 +6,8 @@
 
 - 한국어 기본과 English 선택, 흰 배경의 기존 프레임을 유지했습니다. 메인 배경은 도시 비중이 높은 첨부 이미지 `image(4).png`로 교체했습니다. 배경의 도시 지역이 더 잘 보이도록 PC·모바일에서 이미지 왼쪽을 기준으로 배치했습니다.
 - 기존 UEI 로고의 심볼을 헤더에 배치했습니다. `assets/img/brand/uei-lab-logo.png`는 원본 이미지이며, `assets/js/app.js`의 SVG 뷰포트로 심볼 부분만 표시합니다.
+- 메인 영문 연구실 이름 위에 첨부된 부산대학교 로고(`signature04.png`)를 배치했습니다. 원본 비율과 투명 배경을 유지합니다.
+- 모바일·태블릿 헤더 최상단에 **한국어 / ENG** 전환 줄을 별도로 두었습니다. 메뉴를 열지 않고 전환할 수 있으며 현재 언어가 강조됩니다.
 - 헤더 이름은 `Urban Earth Intelligence (UEI) Lab`, 한글 부제는 `부산대학교 도시지구지능연구실`입니다.
 - 메인 영문명·굵은 한글 제목·소개 문구와 연구실 소개를 수정했습니다. 메인 소속 표기는 **부산대학교 스마트시티전공·도시공학과**입니다.
 - 하단 영상 설명은 **자연색 합성 위성영상 / 위성 지표면온도 / 위성 기반 식생지수**로 바꾸고 영문에도 위성 관측임을 명시했습니다.
@@ -28,7 +30,7 @@
 압축을 푼 뒤 `index.html`을 브라우저에서 여세요. 별도 설치나 빌드가 필요 없습니다.
 
 - 처음 열면 한국어로 표시됩니다.
-- 상단의 `한국어 / English`에서 언어를 전환합니다. 모바일에서는 메뉴를 열면 보입니다.
+- 상단의 `한국어 / English`에서 언어를 전환합니다. 모바일에서는 헤더 맨 위의 `한국어 / ENG` 전환 줄이 항상 표시됩니다.
 - 선택한 언어는 브라우저에 저장됩니다.
 - `index.html?lang=ko`는 한국어, `index.html?lang=en`은 영문으로 바로 열립니다.
 - 언어를 바꾸고 다른 메뉴로 이동해도 선택한 언어가 유지됩니다.
@@ -63,6 +65,7 @@
 | --- | --- |
 | 연구실 이름, 헤더, 로고 경로, 소개, 주소, 이메일, 부산 배경·비교 영상 | `data/site.js` |
 | 유철희 교수 소속·학력·경력·국제저널 편집위원, 인턴 프로필 | `data/people.js` |
+| 메인 부산대학교 로고 | `assets/img/brand/pusan-national-university.png` |
 | 메인 배경 원본 | `assets/img/hero/busan-hero.png` |
 | 부산 영상 개별 원본 | `assets/img/hero/busan-true-color.png`, `busan-lst.png`, `busan-ndvi.png` |
 | 연락처 로고 원본 | `assets/img/brand/uei-lab-contact-logo.png` |
@@ -142,11 +145,11 @@ python tools/make_thumbnails.py your-paper.pdf
 
 ## 자료 출처
 
-연구실·PI·연구·논문·소식 정보는 앞서 확인한 기존 [UEI 홈페이지](https://urbanearthintelligence.com/)의 자료를 반영했습니다. 연구실 소개, 연구 분야, 소속, 경력, 국제저널 편집위원, IF, 주소 및 지원 안내는 사용자가 제공한 내용을 반영했습니다. 메인 배경 위성영상은 이번 첨부 파일 `image(4).png`를 그대로 사용하며 원본의 출처 표기를 유지했습니다. 교수 사진은 같은 홈페이지의 기존 이미지이며, 메인 본문의 부산 위성영상 비교 패널과 연락처의 큰 로고는 이번에 첨부한 원본 이미지입니다. 비교 영상은 이번에 첨부된 개별 이미지 `image.png`, `image(1).png`, `image(2).png`를 각각 그대로 복사하여 사용하며, 두 언어의 대체 텍스트와 설명을 제공합니다. 앞서 사용한 합성 비교 영상은 보관용으로 남겨 두었고 화면에는 개별 원본 세 장이 표시됩니다. 저자 역할 표기는 사용자가 제공한 내용입니다. 헤더에는 앞서 제작한 UEI 로고의 심볼을 사용합니다. 연구 일러스트 4개는 주제별로 생성한 이미지를 웹용 WebP로 변환한 것입니다. 보관용 기존 배경 `busan-satellite.jpeg`는 앞선 출처 안내에 따르면 유철희 교수의 세미나 자료에서 가져왔으며, 원 영상 제공자는 명시되어 있지 않습니다. 논문 이미지의 출처와 라이선스는 `assets/img/papers/sources.json`, 최근 논문 저자명 확인 출처는 `data/publication-author-sources.json`을 참고하세요.
+연구실·PI·연구·논문·소식 정보는 앞서 확인한 기존 [UEI 홈페이지](https://urbanearthintelligence.com/)의 자료를 반영했습니다. 연구실 소개, 연구 분야, 소속, 경력, 국제저널 편집위원, IF, 주소 및 지원 안내는 사용자가 제공한 내용을 반영했습니다. 메인 상단 부산대학교 로고는 첨부 파일 `signature04.png`를 그대로 사용합니다. 메인 배경 위성영상은 이번 첨부 파일 `image(4).png`를 그대로 사용하며 원본의 출처 표기를 유지했습니다. 교수 사진은 같은 홈페이지의 기존 이미지이며, 메인 본문의 부산 위성영상 비교 패널과 연락처의 큰 로고는 이번에 첨부한 원본 이미지입니다. 비교 영상은 이번에 첨부된 개별 이미지 `image.png`, `image(1).png`, `image(2).png`를 각각 그대로 복사하여 사용하며, 두 언어의 대체 텍스트와 설명을 제공합니다. 앞서 사용한 합성 비교 영상은 보관용으로 남겨 두었고 화면에는 개별 원본 세 장이 표시됩니다. 저자 역할 표기는 사용자가 제공한 내용입니다. 헤더에는 앞서 제작한 UEI 로고의 심볼을 사용합니다. 연구 일러스트 4개는 주제별로 생성한 이미지를 웹용 WebP로 변환한 것입니다. 보관용 기존 배경 `busan-satellite.jpeg`는 앞선 출처 안내에 따르면 유철희 교수의 세미나 자료에서 가져왔으며, 원 영상 제공자는 명시되어 있지 않습니다. 논문 이미지의 출처와 라이선스는 `assets/img/papers/sources.json`, 최근 논문 저자명 확인 출처는 `data/publication-author-sources.json`을 참고하세요.
 
 ## English quick guide
 
-This version preserves the supplied website layout and fills it with UEI Lab content. Korean is the default; English is selectable from the header. The hero background uses the newly supplied `image(4).png`, saved unchanged as `assets/img/hero/busan-hero.png`, with left-aligned responsive framing to emphasize urban areas, and the existing readability overlay. All three panel captions explicitly identify the imagery as satellite observations in Korean and English. Three individually supplied Busan images span the full viewport width below the hero and above the lab introduction. Hovering over a panel gently blurs and dims that image while revealing its centered bilingual label, explanation, and a thin frame. Tap to toggle on touchscreens; keyboard focus reveals the explanation, Enter/Space toggles it, and Escape dismisses it. Panels stack on small screens, and transitions respect reduced-motion preferences. The hero affiliation reads “Smart City Major · Department of Urban Planning and Engineering, Pusan National University.” The header uses the existing logo symbol; the contact page shows the supplied full logo above the address. The map defaults to a color hybrid satellite view, with the top edge aligned to the logo. Four matching illustrations accompany the research themes. Education, experience, and international journal editorial roles are displayed vertically.
+This version preserves the supplied website layout and fills it with UEI Lab content. Korean is the default; English is selectable from the header. On mobile and tablet screens, a separate always-visible 한국어 / ENG row appears above the lab identity and menu button. The supplied Pusan National University logo appears above the lab name in the home hero, retaining its original proportions and transparency. The hero background uses the newly supplied `image(4).png`, saved unchanged as `assets/img/hero/busan-hero.png`, with left-aligned responsive framing to emphasize urban areas, and the existing readability overlay. All three panel captions explicitly identify the imagery as satellite observations in Korean and English. Three individually supplied Busan images span the full viewport width below the hero and above the lab introduction. Hovering over a panel gently blurs and dims that image while revealing its centered bilingual label, explanation, and a thin frame. Tap to toggle on touchscreens; keyboard focus reveals the explanation, Enter/Space toggles it, and Escape dismisses it. Panels stack on small screens, and transitions respect reduced-motion preferences. The hero affiliation reads “Smart City Major · Department of Urban Planning and Engineering, Pusan National University.” The header uses the existing logo symbol; the contact page shows the supplied full logo above the address. The map defaults to a color hybrid satellite view, with the top edge aligned to the logo. Four matching illustrations accompany the research themes. Education, experience, and international journal editorial roles are displayed vertically.
 
 Key publications appear together at the top of the publications page. The catalog excludes domestic journals and MDPI journals and includes first-page previews of the three newly supplied PDFs (JAG 2022 and ISPRS JPRS 2019/2018), alongside the five existing international selections. The complete list below retains all 50 records and supports year/type filtering independently of the catalog. Publications before 2020 share one archive section. Author names follow `Yoo, Cheolhee, Yuhan Zhou, and Qihao Weng`; verified published names and author order are preserved, including published initials where applicable. Verification sources for expanded author lists are in `data/publication-author-sources.json`. First-page image provenance, including the supplied PDF filenames, is in `assets/img/papers/sources.json`. The full PDFs are not bundled; article links point to the existing publisher DOI pages.
 

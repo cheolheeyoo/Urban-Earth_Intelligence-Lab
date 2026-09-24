@@ -126,5 +126,12 @@ UEI.site = {
   "heroAffiliation": {
     "ko": "부산대학교 스마트시티전공·도시공학과",
     "en": "Smart City Major · Department of Urban Planning and Engineering, Pusan National University"
+  },
+  "universityLogo": {
+    "image": "assets/img/brand/pusan-national-university.png",
+    "alt": {
+      "ko": "부산대학교 로고 · Pusan National University",
+      "en": "Pusan National University logo"
+    }
   }
 };

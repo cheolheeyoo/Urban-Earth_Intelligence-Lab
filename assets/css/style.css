@@ -104,7 +104,7 @@ button, select { font: inherit; color: inherit; }
 .brand-short { font-weight: 600; font-size: 1.03rem; letter-spacing: -.015em; }
 .brand-long { font-size: .88rem; font-weight: 500; color: var(--ink); margin-top: .2rem; }
 
-.site-nav { display: flex; align-items: center; gap: 2rem; }
+.site-nav { display: flex; align-items: center; gap: 2rem; margin-left: auto; }
 .nav-list { display: flex; gap: 1.75rem; }
 .nav-list a {
   display: block; padding: .5rem 0;
@@ -114,7 +114,8 @@ button, select { font: inherit; color: inherit; }
 .nav-list a:hover { color: var(--accent); text-decoration: none; }
 .nav-list a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
 
-.lang-switch { display: flex; align-items: center; font-size: .875rem; }
+.lang-switch { display: flex; align-items: center; flex: none; font-size: .875rem; }
+.lang-short { display: none; }
 .lang-switch button {
   background: none; border: 0; padding: .35rem .5rem; cursor: pointer;
   color: var(--slate);
@@ -165,6 +166,7 @@ button, select { font: inherit; color: inherit; }
   background: linear-gradient(90deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.82) 38%, rgba(255,255,255,0) 72%);
 }
 .hero-text { position: relative; padding-block: 4rem; }
+.hero-university-logo { width: clamp(210px, 21vw, 270px); height: auto; margin-bottom: 1.25rem; }
 .hero-eyebrow { font-size: clamp(1.35rem, 2.65vw, 2.15rem); font-weight: 600; line-height: 1.25; letter-spacing: -.035em; margin-bottom: .65rem; max-width: 30ch; }
 .hero-title {
   font-size: clamp(2.5rem, 6.2vw, 4.75rem);
@@ -546,7 +548,15 @@ thead th { font-weight: 500; color: var(--slate); font-size: var(--fs-xs); borde
   .featured-catalog .shelf-row { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 1.1rem; }
 }
 @media (max-width: 1080px) {
-  .nav-toggle { display: block; }
+  :root { --header-h: 116px; }
+  .header-inner {
+    display: grid; grid-template-columns: minmax(0, 1fr) 44px;
+    grid-template-rows: 44px 72px;
+    grid-template-areas: "language language" "brand toggle";
+    column-gap: .75rem; row-gap: 0;
+  }
+  .brand { grid-area: brand; }
+  .nav-toggle { display: block; grid-area: toggle; }
   .site-nav {
     display: none;
     position: absolute; left: 0; right: 0; top: var(--header-h);
@@ -559,8 +569,15 @@ thead th { font-weight: 500; color: var(--slate); font-size: var(--fs-xs); borde
   .nav-list { flex-direction: column; gap: 0; }
   .nav-list a { padding: .85rem 0; font-size: var(--fs-md); border-bottom: 1px solid var(--line); }
   .nav-list a[aria-current="page"] { border-bottom-color: var(--line); }
-  .lang-switch { margin-top: 1rem; font-size: var(--fs-sm); }
-  .lang-switch button:first-child { padding-left: 0; }
+  .lang-switch {
+    grid-area: language; align-self: stretch; justify-content: flex-end;
+    margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter);
+    background: #f7f9f9; border-bottom: 1px solid var(--line); font-size: .8125rem;
+  }
+  .lang-switch button { min-width: 64px; min-height: 44px; padding: .35rem .75rem; border-bottom: 2px solid transparent; }
+  .lang-switch button[aria-pressed="true"] { color: var(--accent-ink); border-bottom-color: var(--accent); }
+  .lang-full { display: none; }
+  .lang-short { display: inline; }
 
   .split, .research-item, .contact-grid { grid-template-columns: minmax(0, 1fr); }
   .research-title { max-width: none; }
@@ -578,6 +595,8 @@ thead th { font-weight: 500; color: var(--slate); font-size: var(--fs-xs); borde
 
 @media (max-width: 720px) {
   .hero { min-height: 440px; }
+  .hero-text { padding-block: 3rem; }
+  .hero-university-logo { width: 210px; max-width: 80%; margin-bottom: 1.25rem; }
   .hero-media img { object-position: left center; }
   .hero-media::after { background: linear-gradient(180deg, rgba(255,255,255,.9) 0%, rgba(255,255,255,.78) 55%, rgba(255,255,255,.35) 100%); }
   .area-grid { grid-template-columns: minmax(0, 1fr); }
@@ -620,7 +639,7 @@ thead th { font-weight: 500; color: var(--slate); font-size: var(--fs-xs); borde
 }
 
 @media (max-width: 540px) {
-  .header-inner { gap: .5rem; }
+  .header-inner { column-gap: .5rem; row-gap: 0; }
   .brand { gap: .5rem; }
   .brand-mark { width: 30px; height: 42px; }
   .brand-short { font-size: clamp(.75rem, 3.4vw, .9rem); line-height: 1.25; }
