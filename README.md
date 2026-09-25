@@ -123,7 +123,18 @@ python tools/make_thumbnails.py your-paper.pdf
 
 ### 소식 추가
 
-`data/news.js`에서 `date`, `category`, `title`, `body`를 입력하세요. 날짜는 정확히 확인한 범위에 따라 `2026`, `2026-03`, `2026-05-11`처럼 사용할 수 있습니다. 연·월만 입력하면 확인되지 않은 날짜를 표시하지 않습니다.
+`data/news.js`에서 고유한 `id`, `date`, `category`, 한·영 `title`과 `body`를 입력하세요. 날짜는 정확히 확인한 범위에 따라 `2026`, `2026-03`, `2026-05-11`처럼 사용할 수 있습니다. 기간이 있는 소식은 `dateEnd`에 종료 연·월을 넣습니다. 연·월만 입력하면 확인되지 않은 날짜를 표시하지 않습니다.
+
+각 소식의 `photos` 배열에는 사진 두 장을 넣을 수 있습니다. 사진 파일은 `assets/img/news/`에 넣고 `src` 경로와 한·영 `alt`를 지정하세요. 모든 프레임은 정사각형이며, 사진을 클릭하면 원래 비율로 크게 볼 수 있습니다. 포스터나 문서를 자르지 않고 보여주려면 `fit: "contain"`, 일반 사진의 중심을 조정하려면 `position: "70% center"`처럼 지정합니다. 사진이 없는 이전 소식은 텍스트로 표시됩니다. 메인 화면에는 최신 소식 세 건, 전체 소식 페이지에는 모든 소식이 표시됩니다.
+
+```js
+photos: [
+  { src: "assets/img/news/photo-1.webp", alt: { ko: "행사 현장", en: "At the event" } },
+  { src: "assets/img/news/photo-2.webp", alt: { ko: "행사 포스터", en: "Event poster" }, fit: "contain" }
+]
+```
+
+이번 소식 7건과 사진 14장은 첨부된 `뉴스패널.pptx`에서 가져왔으며, 기존 논문 소식 2건도 유지했습니다. 날짜는 PPT 본문에 적힌 연·월을 따릅니다. 홍콩이공대학교 GeoAI 워크숍은 PPT 본문이 2026년 5월, 사진 속 배너는 2026년 6월 11–12일로 서로 다릅니다. 현재는 본문의 5월로 반영했으며, 확인 후 `polyu-geoai-workshop-2026` 항목의 날짜를 수정할 수 있습니다.
 
 ## GitHub Pages에 올리기
 
@@ -149,7 +160,7 @@ python tools/make_thumbnails.py your-paper.pdf
 
 ## English quick guide
 
-This version preserves the supplied website layout and fills it with UEI Lab content. Korean is the default; English is selectable from the header. On mobile and tablet screens, a separate always-visible 한국어 / ENG row appears above the lab identity and menu button. The supplied Pusan National University logo appears above the lab name in the home hero, retaining its original proportions and transparency. The hero background uses the newly supplied `image(4).png`, saved unchanged as `assets/img/hero/busan-hero.png`, with left-aligned responsive framing to emphasize urban areas, and the existing readability overlay. All three panel captions explicitly identify the imagery as satellite observations in Korean and English. Three individually supplied Busan images span the full viewport width below the hero and above the lab introduction. Hovering over a panel gently blurs and dims that image while revealing its centered bilingual label, explanation, and a thin frame. Tap to toggle on touchscreens; keyboard focus reveals the explanation, Enter/Space toggles it, and Escape dismisses it. Panels stack on small screens, and transitions respect reduced-motion preferences. The hero affiliation reads “Smart City Major · Department of Urban Planning and Engineering, Pusan National University.” The header uses the existing logo symbol; the contact page shows the supplied full logo above the address. The map defaults to a color hybrid satellite view, with the top edge aligned to the logo. Four matching illustrations accompany the research themes. Education, experience, and international journal editorial roles are displayed vertically.
+This version preserves the supplied website layout and fills it with UEI Lab content. Korean is the default; English is selectable from the header. On mobile and tablet screens, a separate always-visible 한국어 / ENG row appears above the lab identity and menu button. The supplied Pusan National University logo appears above the lab name in the home hero, retaining its original proportions and transparency. The hero background uses the newly supplied `image(4).png`, saved unchanged as `assets/img/hero/busan-hero.png`, with left-aligned responsive framing to emphasize urban areas, and the existing readability overlay. All three panel captions explicitly identify the imagery as satellite observations in Korean and English. A small bilingual prompt invites visitors to click each satellite image. Three individually supplied Busan images span the full viewport width below the hero and above the lab introduction. Hovering over a panel gently blurs and dims that image while revealing its centered bilingual label, explanation, and a thin frame. Tap to toggle on touchscreens; keyboard focus reveals the explanation, Enter/Space toggles it, and Escape dismisses it. Panels stack on small screens, and transitions respect reduced-motion preferences. The hero affiliation reads “Smart City Convergence Major · Department of Urban Planning and Engineering, Pusan National University.” The header uses the existing logo symbol; the contact page shows the supplied full logo above the address. The map defaults to a color hybrid satellite view, with the top edge aligned to the logo. Four matching illustrations accompany the research themes. Education, experience, and international journal editorial roles are displayed vertically.
 
 Key publications appear together at the top of the publications page. The catalog excludes domestic journals and MDPI journals and includes first-page previews of the three newly supplied PDFs (JAG 2022 and ISPRS JPRS 2019/2018), alongside the five existing international selections. The complete list below retains all 50 records and supports year/type filtering independently of the catalog. Publications before 2020 share one archive section. Author names follow `Yoo, Cheolhee, Yuhan Zhou, and Qihao Weng`; verified published names and author order are preserved, including published initials where applicable. Verification sources for expanded author lists are in `data/publication-author-sources.json`. First-page image provenance, including the supplied PDF filenames, is in `assets/img/papers/sources.json`. The full PDFs are not bundled; article links point to the existing publisher DOI pages.
 
@@ -158,3 +169,5 @@ User-supplied authorship roles for Cheolhee Yoo are shown in the clicked paper p
 The PI is Cheolhee Yoo. Three undergraduate intern cards are intentionally left as placeholders in `data/people.js`. Replace their bilingual names, add photos and contact details, set `placeholder` to `false`, and remove `placeholderLabel`.
 
 Open `index.html` to preview. Upload the extracted files directly to your GitHub repository root, including `.nojekyll`, and enable Pages from the main branch. No build or package installation is required.
+
+News uses two square photo frames per story, populated with seven items and fourteen photographs from the supplied PowerPoint. The home page previews the latest three stories; the full news page retains two earlier publication announcements. Photographs open at their original aspect ratio, and posters use contain-fit frames. English affiliations consistently use “Smart City Convergence Major.”

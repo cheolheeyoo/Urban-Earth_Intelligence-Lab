@@ -237,7 +237,7 @@
   function renderHome(main) {
     const heroes = S.heroImages || [];
     const areas = (U.research && U.research.areas) || [];
-    const news = (U.news || []).slice().sort((a, b) => (a.date < b.date ? 1 : -1)).slice(0, 4);
+    const news = sortedNews().slice(0, 3);
     const pubs = sortedPubs().slice(0, 5);
 
     main.innerHTML = `
@@ -257,6 +257,8 @@
       </section>
 
       ${S.imageryPanel?.panels?.length ? `<section class="home-imagery" id="busan-imagery" aria-label="${esc(tx(S.imageryPanel.title))}">
+        <p class="imagery-hint wrap">${esc(ui("imagery_hint"))}</p>
+        <div class="imagery-grid">
         ${S.imageryPanel.panels.map((p) => `<button type="button" class="imagery-tile" aria-expanded="false"
           aria-label="${esc(tx(p.title))} · ${esc(tx(p.subtitle))}" aria-controls="imagery-overlay-${esc(p.id)}"
           aria-describedby="imagery-description-${esc(p.id)}">
@@ -267,6 +269,7 @@
             <span class="imagery-description" id="imagery-description-${esc(p.id)}">${esc(tx(p.description))}</span>
           </span>
         </button>`).join("")}
+        </div>
       </section>` : ""}
 
       <section class="section wrap split">
@@ -287,20 +290,21 @@
         </ul>
       </section>
 
-      <section class="section wrap feeds">
-        <div>
+      <section class="section wrap home-news">
           <div class="section-head">
             <h2>${ui("latest_news")}</h2>
             <a class="more" href="${href("news.html")}">${ui("all_news")}</a>
           </div>
-          <ul class="mini-list">
-            ${news.map((n) => `<li>
-              <time datetime="${esc(n.date)}">${formatDate(n.date)}</time>
-              <a href="${href("news.html#n-" + n.date)}">${esc(tx(n.title))}</a>
+          <ul class="news-preview-grid">
+            ${news.map((n) => `<li class="news-preview">
+              ${newsPhotosHTML(n)}
+              <div class="news-meta">${newsDateHTML(n)}${n.category ? `<span class="news-cat">${esc(ui("cat_" + n.category))}</span>` : ""}</div>
+              <h3 class="news-title"><a href="${href("news.html#" + newsId(n))}">${esc(tx(n.title))}</a></h3>
+              <a class="more news-read" href="${href("news.html#" + newsId(n))}">${esc(ui("news_read"))}</a>
             </li>`).join("")}
           </ul>
-        </div>
-        <div>
+      </section>
+      <section class="section wrap">
           <div class="section-head">
             <h2>${ui("recent_pubs")}</h2>
             <a class="more" href="${href("publications.html")}">${ui("all_pubs")}</a>
@@ -312,7 +316,6 @@
               <span class="mini-venue">${esc(p.venue || "")}</span>
             </li>`).join("")}
           </ul>
-        </div>
       </section>`;
 
     startSlider(main.querySelector(".hero"));
@@ -679,23 +682,42 @@
   /* ------------------------------------------------------------------
      NEWS
      ------------------------------------------------------------------ */
+  function sortedNews() {
+    return (U.news || []).slice().sort((a, b) => String(b.date).localeCompare(String(a.date)));
+  }
+
+  function newsId(n) { return "n-" + (n.id || n.date); }
+
+  function newsDateHTML(n) {
+    return `<span class="news-date"><time datetime="${esc(n.date)}">${formatDate(n.date)}</time>${n.dateEnd ? ` <span aria-hidden="true">–</span> <time datetime="${esc(n.dateEnd)}">${formatDate(n.dateEnd)}</time>` : ""}</span>`;
+  }
+
+  function newsPhotosHTML(n) {
+    const photos = (n.photos || (n.image ? [{ src: n.image, alt: n.title }] : [])).slice(0, 2);
+    if (!photos.length) return "";
+    return `<div class="news-photos">${photos.map((p) => `<a class="news-photo${p.fit === "contain" ? " news-photo--contain" : ""}" href="${esc(p.src)}" target="_blank" rel="noopener" aria-label="${esc(ui("news_photo"))}: ${esc(tx(p.alt || n.title))}">
+      <img src="${esc(p.src)}" alt="${esc(tx(p.alt || n.title))}" loading="lazy"${p.position ? ` style="object-position:${esc(p.position)}"` : ""}>
+      <span class="news-photo-open" aria-hidden="true">↗</span>
+    </a>`).join("")}</div>`;
+  }
+
   function renderNews(main) {
-    const items = (U.news || []).slice().sort((a, b) => (a.date < b.date ? 1 : -1));
+    const items = sortedNews();
     main.innerHTML = `
       ${pageHead("news", "")}
-      <div class="wrap">
+      <div class="wrap news-archive">
         ${groupByYear(items, (n) => Number(String(n.date).slice(0, 4))).map(([y, list]) => `
-          <section class="yr-block" aria-labelledby="nh-${y}">
-            <div class="yr-side"><h2 class="yr-num" id="nh-${y}">${y}</h2></div>
-            <ol class="yr-main news-list">
-              ${list.map((n) => `<li class="news-item" id="n-${esc(n.date)}">
-                <time datetime="${esc(n.date)}">${formatDate(n.date)}</time>
-                <div>
-                  ${n.category ? `<p class="news-cat">${ui("cat_" + n.category)}</p>` : ""}
+          <section class="news-year" aria-labelledby="nh-${y}">
+            <h2 class="news-year-title" id="nh-${y}">${y}</h2>
+            <ol class="news-grid">
+              ${list.map((n, i) => `<li class="news-item${n.photos?.length || n.image ? "" : " news-item--text"}" id="${esc(newsId(n))}">
+                ${n.id && list.findIndex((other) => other.date === n.date) === i ? `<span id="n-${esc(n.date)}" class="news-anchor" aria-hidden="true"></span>` : ""}
+                <article>
+                  ${newsPhotosHTML(n)}
+                  <div class="news-meta">${newsDateHTML(n)}${n.category ? `<span class="news-cat">${esc(ui("cat_" + n.category))}</span>` : ""}</div>
                   <h3 class="news-title">${esc(tx(n.title))}</h3>
                   ${n.body ? `<div class="prose">${tx(n.body)}</div>` : ""}
-                  ${n.image ? `<img class="news-img" src="${esc(n.image)}" alt="" loading="lazy">` : ""}
-                </div>
+                </article>
               </li>`).join("")}
             </ol>
           </section>`).join("")}

@@ -48,7 +48,7 @@ UEI.people = {
         },
         "text": {
           "ko": "조교수 · 부산대학교 스마트시티전공",
-          "en": "Assistant Professor · Smart City Major, Pusan National University"
+          "en": "Assistant Professor · Smart City Convergence Major, Pusan National University"
         }
       },
       {
@@ -104,7 +104,7 @@ UEI.people = {
     ],
     "affiliation": {
       "ko": "부산대학교 스마트시티전공 (도시공학과 대학원)",
-      "en": "Smart City Major, Graduate Program in Urban Engineering, Pusan National University"
+      "en": "Smart City Convergence Major, Graduate Program in Urban Engineering, Pusan National University"
     },
     "editorial": [
       {
