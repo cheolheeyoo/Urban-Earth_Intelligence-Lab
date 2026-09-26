@@ -4,7 +4,7 @@ UEI.site = {
   "shortName": "UEI Lab",
   "defaultLanguage": "ko",
   "name": {
-    "ko": "도시지구지능연구실",
+    "ko": "도시원격탐사 AI 연구실",
     "en": "Urban Earth Intelligence (UEI) Lab"
   },
   "tagline": {
@@ -16,7 +16,7 @@ UEI.site = {
     "en": "Pusan National University"
   },
   "intro": {
-    "ko": "<p>부산대학교 도시지구지능연구실(UEI Lab)은 위성 영상을 포함한 공간정보 데이터와 AI기술을 활용해 도시 개발, 기후, 환경의 상호작용을 연구합니다. 대표적으로, 도시 형태와 성장, 도시열섬 및 폭염위험성 평가, 산업용지와 탄소 배출, 녹색 인프라의 냉각 효과 등을 분석하며 지속가능하고 회복탄력성 있는 도시를 향해 연구합니다.</p><p>원격탐사, 도시 환경, 지구지능 및 공간 데이터 과학에 관심 있는 학생과 연구자들의 연락을 언제나 환영합니다.</p>",
+    "ko": "<p>부산대학교 도시원격탐사 AI 연구실(UEI Lab)은 위성 영상을 포함한 공간정보 데이터와 AI기술을 활용해 도시 개발, 기후, 환경의 상호작용을 연구합니다. 대표적으로, 도시 형태와 성장, 도시열섬 및 폭염위험성 평가, 산업용지와 탄소 배출, 녹색 인프라의 냉각 효과 등을 분석하며 지속가능하고 회복탄력성 있는 도시를 향해 연구합니다.</p><p>원격탐사, 도시 환경, 지구지능 및 공간 데이터 과학에 관심 있는 학생과 연구자들의 연락을 언제나 환영합니다.</p>",
     "en": "<p>The Urban Earth Intelligence Lab (UEI Lab) at Pusan National University uses geospatial data, including satellite imagery, and AI to study the interactions between urban development, climate, and the environment. Our research explores urban form and growth, urban heat islands and heatwave risk, industrial land and carbon emissions, and the cooling effects of green infrastructure, with the goal of supporting sustainable and resilient cities.</p><p>We always welcome inquiries from students and researchers interested in remote sensing, urban environments, Earth intelligence, and spatial data science.</p>"
   },
   "heroImages": [
@@ -45,7 +45,7 @@ UEI.site = {
   ],
   "brandName": "Urban Earth Intelligence (UEI) Lab",
   "brandSubtitle": {
-    "ko": "부산대학교 도시지구지능연구실",
+    "ko": "부산대학교 도시원격탐사 AI 연구실",
     "en": "Pusan National University"
   },
   "logo": "assets/img/brand/uei-lab-logo.png",

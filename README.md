@@ -1,6 +1,6 @@
 # UEI Lab 홈페이지
 
-첨부된 사이트 프레임을 유지하여 부산대학교 도시지구지능연구실의 실제 콘텐츠로 채운 버전입니다. **한국어가 기본 언어이며 English를 선택할 수 있습니다.**
+첨부된 사이트 프레임을 유지하여 부산대학교 도시원격탐사 AI 연구실의 실제 콘텐츠로 채운 버전입니다. **한국어가 기본 언어이며 English를 선택할 수 있습니다.**
 
 ## 반영한 내용
 
@@ -8,13 +8,14 @@
 - 기존 UEI 로고의 심볼을 헤더에 배치했습니다. `assets/img/brand/uei-lab-logo.png`는 원본 이미지이며, `assets/js/app.js`의 SVG 뷰포트로 심볼 부분만 표시합니다.
 - 메인 영문 연구실 이름 위에 첨부된 부산대학교 로고(`signature04.png`)를 배치했습니다. 원본 비율과 투명 배경을 유지합니다.
 - 모바일·태블릿 헤더 최상단에 **한국어 / ENG** 전환 줄을 별도로 두었습니다. 메뉴를 열지 않고 전환할 수 있으며 현재 언어가 강조됩니다.
-- 헤더 이름은 `Urban Earth Intelligence (UEI) Lab`, 한글 부제는 `부산대학교 도시지구지능연구실`입니다.
+- 헤더 이름은 `Urban Earth Intelligence (UEI) Lab`, 한글 부제는 `부산대학교 도시원격탐사 AI 연구실`입니다.
 - 메인 영문명·굵은 한글 제목·소개 문구와 연구실 소개를 수정했습니다. 메인 소속 표기는 **부산대학교 스마트시티전공·도시공학과**입니다.
 - 하단 영상 설명은 **자연색 합성 위성영상 / 위성 지표면온도 / 위성 기반 식생지수**로 바꾸고 영문에도 위성 관측임을 명시했습니다.
 - 메인 화면 최근 논문 목록의 공동제1저자 태그를 제거했습니다.
 - 첫 화면과 연구실 소개 사이에 첨부된 부산 영상 3장(True color image, LST, NDVI)을 가로 전체 너비로 배치했습니다. 마우스를 올리면 해당 영상만 살짝 흐려지며 중앙에 설명과 얇은 프레임이 나타납니다. 모바일에서는 이미지를 터치하여 설명을 열고 닫을 수 있습니다. 키보드 Tab으로 이동하고 Enter·Space로 전환하며, Escape로 닫을 수 있습니다. 화면이 좁을 때는 세로로 배치하고, 동작 줄이기 설정을 따릅니다.
 - 연구 4개 분야의 한글·영문 내용과 동일한 스타일의 일러스트를 추가했습니다.
 - 지도교수 소속은 **부산대학교 스마트시티전공 (도시공학과 대학원)**으로 반영했습니다.
+- 학력의 대학명은 **울산과학기술원(UNIST)**으로 표기합니다. 영문 학력의 UNIST 표기는 유지합니다.
 - 학력, 경력, **국제저널 편집위원**을 순서대로 세로 배치했습니다. 경력과 학술지 IF는 사용자 제공 값을 반영했습니다.
 - 학부생 인턴 3명의 기본 카드는 유지했습니다.
 - 논문은 2020년부터 연도별로, 2019년까지는 **2020 이전 / Before 2020**으로 통합했습니다. 연도별 편수 표시는 제거했습니다.
@@ -171,3 +172,9 @@ The PI is Cheolhee Yoo. Three undergraduate intern cards are intentionally left 
 Open `index.html` to preview. Upload the extracted files directly to your GitHub repository root, including `.nojekyll`, and enable Pages from the main branch. No build or package installation is required.
 
 News uses two square photo frames per story, populated with seven items and fourteen photographs from the supplied PowerPoint. The home page previews the latest three stories; the full news page retains two earlier publication announcements. Photographs open at their original aspect ratio, and posters use contain-fit frames. English affiliations consistently use “Smart City Convergence Major.”
+
+## Link 페이지와 협력기관 편집
+
+`links.html`은 국내협력기관과 국외협력기관으로 구성됩니다. 기관명·소속·URL·로고 경로는 `data/partners.js`에서 수정합니다. 첨부 로고 3개는 `assets/img/partners/`에 원본 그대로 저장했습니다. 로고와 기관 카드를 클릭하면 해당 홈페이지가 새 탭으로 열립니다. 한·영 전환을 지원합니다.
+
+메인 위성영상 안내 문구는 `assets/js/i18n.js`의 `imagery_hint`, 글자 크기는 `assets/css/style.css`의 `.imagery-hint`에서 수정합니다. 이번 버전은 16px(1rem)로 확대했습니다.

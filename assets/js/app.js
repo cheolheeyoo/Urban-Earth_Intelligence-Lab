@@ -94,7 +94,7 @@
   /* ------------------------------------------------------------------
      Header & footer
      ------------------------------------------------------------------ */
-  const NAV = ["research", "people", "publications", "news", "contact"];
+  const NAV = ["research", "people", "publications", "news", "contact", "links"];
 
   function renderHeader() {
     const page = document.body.dataset.page;
@@ -755,6 +755,29 @@
   /* ------------------------------------------------------------------
      404
      ------------------------------------------------------------------ */
+  function renderLinks(main) {
+    const partners = U.partners || {};
+    main.innerHTML = `${pageHead("links", "")}
+      <div class="wrap partner-sections">
+        ${["domestic", "international"].map((group) => `<section class="partner-section" aria-labelledby="partners-${group}">
+          <h2 id="partners-${group}">${esc(ui(group + "_partners"))}</h2>
+          <ul class="partner-grid">
+            ${(partners[group] || []).map((p) => `<li>
+              <a class="partner-card" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">
+                <div class="partner-logo"><img src="${esc(p.logo)}" alt="${esc(tx(p.name))} ${lang === "ko" ? "로고" : "logo"}" loading="lazy"></div>
+                <div class="partner-info">
+                  <p class="partner-institution">${esc(tx(p.institution))}</p>
+                  <h3>${esc(tx(p.name))}</h3>
+                  <p class="partner-url">${esc(p.displayUrl)}<span aria-hidden="true">↗</span></p>
+                  <span class="sr-only">${esc(ui("visit_partner"))} · ${esc(ui("opens_new_tab"))}</span>
+                </div>
+              </a>
+            </li>`).join("")}
+          </ul>
+        </section>`).join("")}
+      </div>`;
+  }
+
   function renderNotFound(main) {
     main.innerHTML = `<header class="page-head wrap">
       <h1>${ui("notfound_title")}</h1>
@@ -768,7 +791,7 @@
      ------------------------------------------------------------------ */
   const PAGES = {
     home: renderHome, research: renderResearch, people: renderPeople,
-    publications: renderPublications, news: renderNews, contact: renderContact, "404": renderNotFound
+    publications: renderPublications, news: renderNews, contact: renderContact, links: renderLinks, "404": renderNotFound
   };
 
   function renderAll() {

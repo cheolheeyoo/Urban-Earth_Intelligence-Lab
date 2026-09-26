@@ -15,7 +15,7 @@ UEI.people = {
     "office": "",
     "cv": "",
     "bio": {
-      "ko": "<p>2026년 3월 부산대학교에 부임했습니다. 이전에는 NASA 제트추진연구소(JPL)의 박사후연구원과 홍콩이공대학교 연구조교수로 재직했습니다. 2022년 UNIST에서 도시환경공학 박사학위를 받았습니다.</p>",
+      "ko": "<p>2026년 3월 부산대학교에 부임했습니다. 이전에는 NASA 제트추진연구소(JPL)의 박사후연구원과 홍콩이공대학교 연구조교수로 재직했습니다. 2022년 울산과학기술원(UNIST)에서 도시환경공학 박사학위를 받았습니다.</p>",
       "en": "<p>I joined Pusan National University in March 2026. Previously, I was a JPL Postdoctoral Fellow at NASA’s Jet Propulsion Laboratory and a Research Assistant Professor at The Hong Kong Polytechnic University. I received my Ph.D. in Urban &amp; Environmental Science and Engineering from UNIST in 2022.</p>"
     },
     "education": [
@@ -25,7 +25,7 @@ UEI.people = {
           "ko": "2017–2022"
         },
         "text": {
-          "ko": "도시환경공학 박사 · UNIST",
+          "ko": "도시환경공학 박사 · 울산과학기술원(UNIST)",
           "en": "Ph.D., Urban & Environmental Science and Engineering · UNIST"
         }
       },
@@ -35,7 +35,7 @@ UEI.people = {
           "ko": "2013–2017"
         },
         "text": {
-          "ko": "도시환경공학 학사 · UNIST · 최우등 졸업",
+          "ko": "도시환경공학 학사 · 울산과학기술원(UNIST) · 최우등 졸업",
           "en": "B.S., Urban & Environmental Science and Engineering · UNIST · Summa Cum Laude"
         }
       }
