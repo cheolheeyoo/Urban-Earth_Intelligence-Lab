@@ -414,7 +414,7 @@
     const name = esc(tx(member.name));
     return `<button class="member-photo-switch" type="button" data-member-photo
         data-name="${name}" aria-label="${name}: ${esc(ui("member_photo_show"))}" aria-pressed="false">
-      <img class="member-photo member-photo--formal" src="${esc(member.photo)}"
+      <img class="member-photo member-photo--formal${member.photoFit === "cover" ? " member-photo--fill" : ""}" src="${esc(member.photo)}"
         alt="${name} · ${esc(ui("member_photo_formal"))}" loading="lazy" aria-hidden="false">
       <img class="member-photo member-photo--casual" src="${esc(member.photoAlt)}"
         alt="${name} · ${esc(ui("member_photo_casual"))}" loading="lazy" aria-hidden="true">

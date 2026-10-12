@@ -334,6 +334,7 @@ thead th { font-weight: 500; color: var(--slate); font-size: var(--fs-xs); borde
   object-fit: contain; border-radius: inherit; transition: opacity .22s ease;
 }
 .member-photo--formal { opacity: 1; }
+.member-photo-switch .member-photo--fill { object-fit: cover; object-position: center; }
 .member-photo--casual { opacity: 0; }
 .member-photo-switch.is-casual .member-photo--formal { opacity: 0; }
 .member-photo-switch.is-casual .member-photo--casual { opacity: 1; }

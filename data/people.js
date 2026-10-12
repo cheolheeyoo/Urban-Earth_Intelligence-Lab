@@ -140,7 +140,7 @@ UEI.people = {
         {
           "name": {
             "ko": "배지우",
-            "en": "배지우"
+            "en": "Jiwoo Bae"
           },
           "role": {
             "ko": "학부생 인턴",
@@ -210,6 +210,7 @@ UEI.people = {
             "en": "Department of Urban Planning and Engineering, Pusan National University"
           },
           "photo": "assets/img/people/doik-kim-profile.png",
+          "photoFit": "cover",
           "photoAlt": "assets/img/people/doik-kim-casual.png",
           "email": "doik0601@pusan.ac.kr",
           "profile": [
@@ -258,7 +259,7 @@ UEI.people = {
         {
           "name": {
             "ko": "서민희",
-            "en": "서민희"
+            "en": "Minhee Seo"
           },
           "role": {
             "ko": "학부생 인턴",
@@ -309,7 +310,7 @@ UEI.people = {
               },
               "answer": {
                 "ko": "영천얼큰순대국밥",
-                "en": "Yeongcheon spicy sundae-gukbap (blood sausage soup with rice)"
+                "en": "Yeongcheon spicy sundae-gukbap (spicy sausage soup with rice)"
               }
             }
           ]

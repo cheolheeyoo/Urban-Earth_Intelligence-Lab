@@ -44,13 +44,13 @@
 
 `data/people.js`의 `groups[0].members`에서 소개를 수정할 수 있습니다.
 
-- `name`: 한글·영문 이름. 김도익 학생의 영문 이름은 설문에 적힌 `Doik Kim`입니다. 영문 표기가 제공되지 않은 배지우·서민희 학생은 영문 화면에서도 한글 이름을 사용합니다.
+- `name`: 한글·영문 이름. 영문 이름은 배지우 `Jiwoo Bae`, 김도익 `Doik Kim`, 서민희 `Minhee Seo`입니다.
 - `role`, `affiliation`, `email`: 역할, 소속, 이메일. 이메일은 제공된 설문 내용을 반영했습니다.
 - `photo`: 기본 증명사진 경로.
 - `photoAlt`: 마우스를 올렸을 때 보이는 두 번째 사진 경로.
 - `profile`: 취미, 꿈꾸는 여행지, 나에 관한 흥미로운 사실, 가장 맛있는 음식의 네 항목. 각 항목의 `label`과 `answer`에 `ko`/`en` 문구가 있습니다.
 
-사진은 `assets/img/people/`에 있으며, 제공된 여섯 장을 변형 없이 사용했습니다. 사진 전체가 보이도록 프레임에 맞춰 표시합니다. 마우스를 올리면 일상 사진, 벗어나면 증명사진으로 돌아갑니다. 터치 기기에서는 사진을 눌러 전환하며, 키보드는 Tab으로 사진에 이동한 뒤 Enter/Space로 전환할 수 있습니다. Escape 또는 포커스 해제로 증명사진으로 돌아갑니다.
+사진은 `assets/img/people/`에 있으며, 제공된 여섯 장을 변형 없이 사용했습니다. 기본적으로 사진 전체가 보이도록 표시하며, 김도익 학생의 증명사진은 `photoFit: "cover"` 설정으로 프레임을 꽉 채웁니다. 이 설정은 증명사진에만 적용됩니다. 마우스를 올리면 일상 사진, 벗어나면 증명사진으로 돌아갑니다. 터치 기기에서는 사진을 눌러 전환하며, 키보드는 Tab으로 사진에 이동한 뒤 Enter/Space로 전환할 수 있습니다. Escape 또는 포커스 해제로 증명사진으로 돌아갑니다.
 
 설문 원본 문서는 홈페이지 파일에 포함하지 않았습니다. 기존 교수 소개와 다른 페이지의 콘텐츠는 유지했습니다.
 
@@ -161,7 +161,7 @@ Key publications appear together at the top of the publications page. The catalo
 
 User-supplied authorship roles for Cheolhee Yoo are shown in the clicked paper preview and the full-list entries. The featured catalog cards and the home page recent-publication list have no authorship-role tags. Four papers (`paper-01`, `paper-12`, `paper-28`, `paper-36`) are marked “Co-first author”; the Suwon hybrid machine-learning study (`paper-22`) is marked “Corresponding author.” Maintain these via `labAuthorRole` in `data/publications.js`; published author names and order remain unchanged.
 
-The PI is Cheolhee Yoo. Three undergraduate interns are displayed as full-width rows in this order: 배지우, Doik Kim (김도익), and 서민희. Each profile includes the supplied email, Department of Urban Planning and Engineering at Pusan National University, four questionnaire responses in Korean and English, and an original portrait/casual photo pair. Hovering reveals the casual photo; touch and keyboard controls provide the same access.
+The PI is Cheolhee Yoo. Three undergraduate interns are displayed as full-width rows in this order: Jiwoo Bae (배지우), Doik Kim (김도익), and Minhee Seo (서민희). Each profile includes the supplied email, Department of Urban Planning and Engineering at Pusan National University, four questionnaire responses in Korean and English, and an original portrait/casual photo pair. Hovering reveals the casual photo; touch and keyboard controls provide the same access.
 
 Open `index.html` to preview. Upload the extracted files directly to your GitHub repository root, including `.nojekyll`, and enable Pages from the main branch. No build or package installation is required.
 
