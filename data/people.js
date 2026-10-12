@@ -139,48 +139,180 @@ UEI.people = {
       "members": [
         {
           "name": {
-            "ko": "학부생 인턴 01",
-            "en": "Undergraduate Intern 01"
+            "ko": "배지우",
+            "en": "배지우"
           },
           "role": {
             "ko": "학부생 인턴",
             "en": "Undergraduate intern"
           },
-          "placeholderLabel": "01",
-          "placeholder": true,
-          "photo": "",
-          "email": "",
-          "interests": ""
+          "affiliation": {
+            "ko": "부산대학교 도시공학과",
+            "en": "Department of Urban Planning and Engineering, Pusan National University"
+          },
+          "photo": "assets/img/people/bae-jiwoo-profile.png",
+          "photoAlt": "assets/img/people/bae-jiwoo-casual.png",
+          "email": "qowldn6125@pusan.ac.kr",
+          "profile": [
+            {
+              "label": {
+                "ko": "취미",
+                "en": "Hobbies"
+              },
+              "answer": {
+                "ko": "게임하기 · 여행가기 · 웹툰 보기",
+                "en": "Gaming, traveling, and reading webtoons"
+              }
+            },
+            {
+              "label": {
+                "ko": "꿈꾸는 여행지",
+                "en": "Dream vacation"
+              },
+              "answer": {
+                "ko": "스위스",
+                "en": "Switzerland"
+              }
+            },
+            {
+              "label": {
+                "ko": "나에 관한 흥미로운 사실",
+                "en": "A fun fact about me"
+              },
+              "answer": {
+                "ko": "지금까지 약 3개국을 여행해 보았습니다!",
+                "en": "I have traveled to around three countries!"
+              }
+            },
+            {
+              "label": {
+                "ko": "가장 맛있는 음식",
+                "en": "Most delicious food"
+              },
+              "answer": {
+                "ko": "치킨",
+                "en": "Fried chicken"
+              }
+            }
+          ]
         },
         {
           "name": {
-            "ko": "학부생 인턴 02",
-            "en": "Undergraduate Intern 02"
+            "ko": "김도익",
+            "en": "Doik Kim"
           },
           "role": {
             "ko": "학부생 인턴",
             "en": "Undergraduate intern"
           },
-          "placeholderLabel": "02",
-          "placeholder": true,
-          "photo": "",
-          "email": "",
-          "interests": ""
+          "affiliation": {
+            "ko": "부산대학교 도시공학과",
+            "en": "Department of Urban Planning and Engineering, Pusan National University"
+          },
+          "photo": "assets/img/people/doik-kim-profile.png",
+          "photoAlt": "assets/img/people/doik-kim-casual.png",
+          "email": "doik0601@pusan.ac.kr",
+          "profile": [
+            {
+              "label": {
+                "ko": "취미",
+                "en": "Hobbies"
+              },
+              "answer": {
+                "ko": "수영 · 축구 · 축구 게임",
+                "en": "Swimming, playing soccer, and soccer video games"
+              }
+            },
+            {
+              "label": {
+                "ko": "꿈꾸는 여행지",
+                "en": "Dream vacation"
+              },
+              "answer": {
+                "ko": "스위스 Lake Oeschinen — 산을 배경으로 한 호수에서 수영하기",
+                "en": "Lake Oeschinen, Switzerland — swimming in a lake surrounded by mountains"
+              }
+            },
+            {
+              "label": {
+                "ko": "나에 관한 흥미로운 사실",
+                "en": "A fun fact about me"
+              },
+              "answer": {
+                "ko": "광안대교 바로 아래에서 수영한 적이 있습니다!",
+                "en": "I have swum right beneath Gwangan Bridge!"
+              }
+            },
+            {
+              "label": {
+                "ko": "가장 맛있는 음식",
+                "en": "Most delicious food"
+              },
+              "answer": {
+                "ko": "구운 소갈비살과 된장찌개",
+                "en": "Grilled beef rib meat and doenjang-jjigae (soybean paste stew)"
+              }
+            }
+          ]
         },
         {
           "name": {
-            "ko": "학부생 인턴 03",
-            "en": "Undergraduate Intern 03"
+            "ko": "서민희",
+            "en": "서민희"
           },
           "role": {
             "ko": "학부생 인턴",
             "en": "Undergraduate intern"
           },
-          "placeholderLabel": "03",
-          "placeholder": true,
-          "photo": "",
-          "email": "",
-          "interests": ""
+          "affiliation": {
+            "ko": "부산대학교 도시공학과",
+            "en": "Department of Urban Planning and Engineering, Pusan National University"
+          },
+          "photo": "assets/img/people/seo-minhee-profile.png",
+          "photoAlt": "assets/img/people/seo-minhee-casual.png",
+          "email": "syeohan@pusan.ac.kr",
+          "profile": [
+            {
+              "label": {
+                "ko": "취미",
+                "en": "Hobbies"
+              },
+              "answer": {
+                "ko": "야구 시청하기 · 음악 듣기 · 낮잠 자기",
+                "en": "Watching baseball, listening to music, and taking naps"
+              }
+            },
+            {
+              "label": {
+                "ko": "꿈꾸는 여행지",
+                "en": "Dream vacation"
+              },
+              "answer": {
+                "ko": "스페인 바르셀로나",
+                "en": "Barcelona, Spain"
+              }
+            },
+            {
+              "label": {
+                "ko": "나에 관한 흥미로운 사실",
+                "en": "A fun fact about me"
+              },
+              "answer": {
+                "ko": "어렸을 때 운영한 액괴(슬라임) 유튜브 채널이 구독자 1,000명을 달성했습니다.",
+                "en": "As a child, I ran a slime YouTube channel that reached 1,000 subscribers."
+              }
+            },
+            {
+              "label": {
+                "ko": "가장 맛있는 음식",
+                "en": "Most delicious food"
+              },
+              "answer": {
+                "ko": "영천얼큰순대국밥",
+                "en": "Yeongcheon spicy sundae-gukbap (blood sausage soup with rice)"
+              }
+            }
+          ]
         }
       ]
     }

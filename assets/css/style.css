@@ -314,6 +314,66 @@ thead th { font-weight: 500; color: var(--slate); font-size: var(--fs-xs); borde
 .member-role, .member-interests, .member-email { font-size: var(--fs-xs); color: var(--slate); margin-top: .15rem; }
 .member-email a { color: var(--accent); word-break: break-all; }
 
+/* Undergraduate profiles: one member per row, with an accessible photo swap. */
+.member-photo-help { color: var(--slate); font-size: var(--fs-xs); margin: -.5rem 0 1.75rem; }
+.member-list { display: grid; grid-template-columns: minmax(0, 1fr); }
+.member-row {
+  display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 2rem 2.75rem;
+  padding: 2.25rem 0; border-top: 1px solid var(--line); align-items: start;
+}
+.member-row:first-child { padding-top: 0; border-top: 0; }
+.member-portrait, .member-info { min-width: 0; }
+.member-photo-switch {
+  position: relative; display: block; width: 100%; aspect-ratio: 4 / 5;
+  padding: 0; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--paper); cursor: pointer; touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.member-photo-switch .member-photo {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: contain; border-radius: inherit; transition: opacity .22s ease;
+}
+.member-photo--formal { opacity: 1; }
+.member-photo--casual { opacity: 0; }
+.member-photo-switch.is-casual .member-photo--formal { opacity: 0; }
+.member-photo-switch.is-casual .member-photo--casual { opacity: 1; }
+.member-photo-mark {
+  position: absolute; right: .35rem; bottom: .35rem; padding: .05rem .35rem;
+  color: var(--ink); background: rgba(255,255,255,.88); border-radius: 2px;
+  font-size: .85rem; line-height: 1.4; pointer-events: none;
+}
+.member-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: .75rem 1rem; flex-wrap: wrap; }
+.member-row .member-role { margin: 0; color: var(--accent); font-size: var(--fs-xs); }
+.member-row .member-name { margin: .2rem 0 .35rem; font-size: 1.5rem; font-weight: 500; }
+.member-row .member-name .alt-name { font-size: .7em; }
+.member-affiliation { color: var(--slate); font-size: var(--fs-sm); }
+.member-row .member-email { margin-top: .25rem; }
+.member-profile {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem 2rem; margin: 1.4rem 0 0;
+}
+.member-profile-item { min-width: 0; }
+.member-profile dt { color: var(--accent-ink); font-size: var(--fs-xs); font-weight: 600; margin-bottom: .25rem; }
+.member-profile dd { margin: 0; font-size: var(--fs-sm); line-height: 1.65; overflow-wrap: anywhere; }
+
+@media (max-width: 800px) {
+  .member-row { grid-template-columns: 130px minmax(0, 1fr); column-gap: 1.5rem; }
+  .member-profile { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+}
+@media (max-width: 540px) {
+  .member-row { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; padding-block: 1.75rem; }
+  .member-portrait { width: 140px; }
+  .member-heading { display: block; }
+  .member-row .member-email { margin-top: .65rem; }
+  .member-profile { margin-top: 1.25rem; }
+}
+@media print {
+  .member-photo-help, .member-photo-mark { display: none; }
+  .member-row { break-inside: avoid; }
+  .member-photo-switch .member-photo--formal { opacity: 1 !important; }
+  .member-photo-switch .member-photo--casual { opacity: 0 !important; }
+}
+
 .alumni th { font-weight: 500; width: 30%; }
 .alumni td:nth-child(2) { width: 16%; color: var(--slate); white-space: nowrap; }
 .alumni td:last-child { color: var(--slate); }

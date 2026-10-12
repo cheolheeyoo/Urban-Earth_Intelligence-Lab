@@ -17,7 +17,7 @@
 - 지도교수 소속은 **부산대학교 스마트시티전공 (도시공학과 대학원)**으로 반영했습니다.
 - 학력의 대학명은 **울산과학기술원(UNIST)**으로 표기합니다. 영문 학력의 UNIST 표기는 유지합니다.
 - 학력, 경력, **국제저널 편집위원**을 순서대로 세로 배치했습니다. 경력과 학술지 IF는 사용자 제공 값을 반영했습니다.
-- 학부생 인턴 3명의 기본 카드는 유지했습니다.
+- 학부생 인턴 3명을 배지우·김도익·서민희 순서로 한 명씩 가로 행에 배치했습니다. 네 가지 설문 응답, 소속, 이메일과 증명사진/일상 사진 전환을 반영했습니다.
 - 논문은 2020년부터 연도별로, 2019년까지는 **2020 이전 / Before 2020**으로 통합했습니다. 연도별 편수 표시는 제거했습니다.
 - 논문 46편·도서 챕터 4편과 실제 논문 첫 페이지 이미지 16장을 유지했습니다.
 - **주요 대표논문 / Key publications**을 논문 페이지 상단의 하나의 카탈로그로 통합했습니다. 국내학술지와 MDPI 논문을 제외한 국제학술지 8편을 연도 구분 없이 표시합니다. 기존 국제 대표논문 5편에 사용자가 첨부한 2022년 JAG 논문과 2019·2018년 ISPRS JPRS 논문을 추가했습니다. 첨부 논문은 기존 전체 목록과 DOI로 대조하여 중복 없이 대표논문으로 지정했습니다. 연도·유형 필터는 아래 전체 목록에만 적용됩니다. 전체 목록에는 국내학술지와 MDPI 논문도 유지됩니다.
@@ -40,25 +40,19 @@
 
 ## 학부생 인턴 3명 수정하기
 
-`data/people.js`의 `groups[0].members`에 기본 카드 3개가 있습니다.
+구성원 페이지는 **배지우 → 김도익 → 서민희** 순서로 한 명씩 가로 행에 표시됩니다. 세 학생의 소속은 부산대학교 도시공학과입니다. 작은 화면에서는 각 행 안의 사진과 소개가 위아래로 배치됩니다.
 
-```javascript
-{
-  "name": { "ko": "실제 이름", "en": "English Name" },
-  "role": { "ko": "학부생 인턴", "en": "Undergraduate intern" },
-  "placeholder": false,
-  "photo": "assets/img/people/student-01.jpg",
-  "email": "",
-  "interests": { "ko": "관심 연구 분야", "en": "Research interests" }
-}
-```
+`data/people.js`의 `groups[0].members`에서 소개를 수정할 수 있습니다.
 
-1. `name`에 한글·영문 이름을 입력하세요.
-2. 사진은 `assets/img/people/`에 넣고 `photo`에 경로를 적으세요. 세로 4:5 비율이 잘 맞습니다.
-3. `placeholder`를 `false`로 바꾸고 `placeholderLabel` 항목을 삭제하세요.
-4. `email`, `interests`를 입력하세요. 빈 문자열 `""`로 두면 화면에 나타나지 않습니다.
+- `name`: 한글·영문 이름. 김도익 학생의 영문 이름은 설문에 적힌 `Doik Kim`입니다. 영문 표기가 제공되지 않은 배지우·서민희 학생은 영문 화면에서도 한글 이름을 사용합니다.
+- `role`, `affiliation`, `email`: 역할, 소속, 이메일. 이메일은 제공된 설문 내용을 반영했습니다.
+- `photo`: 기본 증명사진 경로.
+- `photoAlt`: 마우스를 올렸을 때 보이는 두 번째 사진 경로.
+- `profile`: 취미, 꿈꾸는 여행지, 나에 관한 흥미로운 사실, 가장 맛있는 음식의 네 항목. 각 항목의 `label`과 `answer`에 `ko`/`en` 문구가 있습니다.
 
-현재 기본 이름은 **학부생 인턴 01, 02, 03**입니다. 실제 학생 이름·이메일·사진·연구 분야를 임의로 만들지 않았습니다.
+사진은 `assets/img/people/`에 있으며, 제공된 여섯 장을 변형 없이 사용했습니다. 사진 전체가 보이도록 프레임에 맞춰 표시합니다. 마우스를 올리면 일상 사진, 벗어나면 증명사진으로 돌아갑니다. 터치 기기에서는 사진을 눌러 전환하며, 키보드는 Tab으로 사진에 이동한 뒤 Enter/Space로 전환할 수 있습니다. Escape 또는 포커스 해제로 증명사진으로 돌아갑니다.
+
+설문 원본 문서는 홈페이지 파일에 포함하지 않았습니다. 기존 교수 소개와 다른 페이지의 콘텐츠는 유지했습니다.
 
 ## 다른 내용 수정하기
 
@@ -167,7 +161,7 @@ Key publications appear together at the top of the publications page. The catalo
 
 User-supplied authorship roles for Cheolhee Yoo are shown in the clicked paper preview and the full-list entries. The featured catalog cards and the home page recent-publication list have no authorship-role tags. Four papers (`paper-01`, `paper-12`, `paper-28`, `paper-36`) are marked “Co-first author”; the Suwon hybrid machine-learning study (`paper-22`) is marked “Corresponding author.” Maintain these via `labAuthorRole` in `data/publications.js`; published author names and order remain unchanged.
 
-The PI is Cheolhee Yoo. Three undergraduate intern cards are intentionally left as placeholders in `data/people.js`. Replace their bilingual names, add photos and contact details, set `placeholder` to `false`, and remove `placeholderLabel`.
+The PI is Cheolhee Yoo. Three undergraduate interns are displayed as full-width rows in this order: 배지우, Doik Kim (김도익), and 서민희. Each profile includes the supplied email, Department of Urban Planning and Engineering at Pusan National University, four questionnaire responses in Korean and English, and an original portrait/casual photo pair. Hovering reveals the casual photo; touch and keyboard controls provide the same access.
 
 Open `index.html` to preview. Upload the extracted files directly to your GitHub repository root, including `.nojekyll`, and enable Pages from the main branch. No build or package installation is required.
 

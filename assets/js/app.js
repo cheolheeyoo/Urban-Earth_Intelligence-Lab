@@ -409,6 +409,55 @@
   /* ------------------------------------------------------------------
      PEOPLE
      ------------------------------------------------------------------ */
+  function memberPhotoHTML(member) {
+    if (!member.photoAlt) return photoHTML(member, "member-photo");
+    const name = esc(tx(member.name));
+    return `<button class="member-photo-switch" type="button" data-member-photo
+        data-name="${name}" aria-label="${name}: ${esc(ui("member_photo_show"))}" aria-pressed="false">
+      <img class="member-photo member-photo--formal" src="${esc(member.photo)}"
+        alt="${name} · ${esc(ui("member_photo_formal"))}" loading="lazy" aria-hidden="false">
+      <img class="member-photo member-photo--casual" src="${esc(member.photoAlt)}"
+        alt="${name} · ${esc(ui("member_photo_casual"))}" loading="lazy" aria-hidden="true">
+      <span class="member-photo-mark" aria-hidden="true">↔</span>
+    </button>`;
+  }
+
+  function bindMemberPhotos(main) {
+    main.querySelectorAll("[data-member-photo]").forEach((button) => {
+      const formal = button.querySelector(".member-photo--formal");
+      const casual = button.querySelector(".member-photo--casual");
+      let lastPointerType = "";
+      const showCasual = (show) => {
+        button.classList.toggle("is-casual", show);
+        button.setAttribute("aria-pressed", String(show));
+        button.setAttribute("aria-label", `${button.dataset.name}: ${ui(show ? "member_photo_hide" : "member_photo_show")}`);
+        formal.setAttribute("aria-hidden", String(show));
+        casual.setAttribute("aria-hidden", String(!show));
+      };
+      button.addEventListener("pointerenter", (event) => {
+        if (event.pointerType !== "touch") showCasual(true);
+      });
+      button.addEventListener("pointerleave", (event) => {
+        if (event.pointerType !== "touch") showCasual(false);
+      });
+      button.addEventListener("pointerdown", (event) => {
+        lastPointerType = event.pointerType;
+      });
+      button.addEventListener("click", (event) => {
+        // Touch and keyboard activation toggle the photo; mouse hover is momentary.
+        if (event.detail === 0 || event.pointerType === "touch" || lastPointerType === "touch"
+            || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+          showCasual(!button.classList.contains("is-casual"));
+        }
+        lastPointerType = "";
+      });
+      button.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") showCasual(false);
+      });
+      button.addEventListener("blur", () => showCasual(false));
+    });
+  }
+
   function renderPeople(main) {
     const P = U.people || {};
     const pi = P.pi;
@@ -438,16 +487,27 @@
         </div>
       </section>` : "";
 
-    const groupsHTML = (P.groups || []).filter((g) => (g.members || []).length).map((g) => `
+    const groupsHTML = (P.groups || []).filter((g) => (g.members || []).length).map((g, gi) => `
       <section class="wrap member-group">
         <h2 class="section-title">${esc(tx(g.title))} <span class="count">${g.members.length}</span></h2>
-        <ul class="member-grid">
-          ${g.members.map((m) => `<li class="member">
-            ${photoHTML(m, "member-photo")}
-            <p class="member-name">${esc(tx(m.name))}${!m.placeholder && other(m.name) ? ` <span class="alt-name">${esc(other(m.name))}</span>` : ""}</p>
-            <p class="member-role">${esc(tx(m.role))}</p>
-            ${m.interests ? `<p class="member-interests">${esc(tx(m.interests))}</p>` : ""}
-            ${m.email ? `<p class="member-email"><a href="mailto:${esc(m.email)}">${esc(m.email)}</a></p>` : ""}
+        ${g.members.some((m) => m.photoAlt) ? `<p class="member-photo-help">${esc(ui("member_photo_hint"))}</p>` : ""}
+        <ul class="member-list">
+          ${g.members.map((m, mi) => `<li class="member member-row" aria-labelledby="member-name-${gi}-${mi}">
+            <div class="member-portrait">${memberPhotoHTML(m)}</div>
+            <div class="member-info">
+              <div class="member-heading">
+                <div>
+                  <p class="member-role">${esc(tx(m.role))}</p>
+                  <h3 class="member-name" id="member-name-${gi}-${mi}">${esc(tx(m.name))}${!m.placeholder && other(m.name) && other(m.name) !== tx(m.name) ? ` <span class="alt-name">${esc(other(m.name))}</span>` : ""}</h3>
+                  ${m.affiliation ? `<p class="member-affiliation">${esc(tx(m.affiliation))}</p>` : ""}
+                </div>
+                ${m.email ? `<p class="member-email"><a href="mailto:${esc(m.email)}">${esc(m.email)}</a></p>` : ""}
+              </div>
+              ${m.interests ? `<p class="member-interests">${esc(tx(m.interests))}</p>` : ""}
+              ${(m.profile || []).length ? `<dl class="member-profile">${m.profile.map((item) => `<div class="member-profile-item">
+                <dt>${esc(tx(item.label))}</dt><dd>${esc(tx(item.answer))}</dd>
+              </div>`).join("")}</dl>` : ""}
+            </div>
           </li>`).join("")}
         </ul>
       </section>`).join("");
@@ -470,6 +530,7 @@
       </section>` : "";
 
     main.innerHTML = pageHead("people", esc(ui("people_lead"))) + piHTML + groupsHTML + alumniHTML;
+    bindMemberPhotos(main);
   }
 
   /* ------------------------------------------------------------------

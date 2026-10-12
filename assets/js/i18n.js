@@ -40,6 +40,11 @@ UEI.strings = {
     funder: "Funded by",
 
     people_lead: "UEI Lab always welcomes new members.",
+    member_photo_hint: "Hover over or tap a portrait to see another side of our members.",
+    member_photo_show: "Show casual photo",
+    member_photo_hide: "Show profile photo",
+    member_photo_formal: "Profile photo",
+    member_photo_casual: "Casual photo",
     pi: "Principal investigator",
     education: "Education",
     experience: "Experience",
@@ -135,6 +140,11 @@ UEI.strings = {
     funder: "지원 기관",
 
     people_lead: "UEI 연구실은 새로운 구성원을 언제나 환영합니다.",
+    member_photo_hint: "사진에 마우스를 올리거나 눌러보세요. 일상 속 모습도 만나볼 수 있습니다.",
+    member_photo_show: "일상 사진 보기",
+    member_photo_hide: "증명사진 보기",
+    member_photo_formal: "증명사진",
+    member_photo_casual: "일상 사진",
     pi: "지도교수",
     education: "학력",
     experience: "경력",
